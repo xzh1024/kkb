@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .p2 {
+      page-break-before: "always";
+    }
+  </style>
+</head>
+
+
+<body>
+  <p>This is a test paragraph.</p>
+  <input type="button" onclick="setPageBreak()" value="Set page-break" />
+  <p id="p2" class="p2" style="page-break-before: always">This is also a test paragraph.</p>
+  <script type="text/javascript">
+    function setPageBreak() {
+      // document.getElementById("p2").style.pageBreakBefore = "always";
+      window.print();
+    }
+  </script>
+  　　
+</body>
+
+</html>
