@@ -1,0 +1,43 @@
+Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建但页面应用变得易如反掌。
+
+安装：vue add router
+
+核⼼步骤：
+步骤⼀：使⽤vue-router插件，router.js
+  import Router from 'vue-router'
+  Vue.use(Router)
+
+步骤⼆：创建Router实例，router.js
+  export default new Router({...})
+
+步骤三：在根组件上添加该实例，main.js
+  import router from './router'
+  new Vue({
+    router,
+  }).$mount("#app");
+
+步骤四：添加路由视图，App.vue
+  <router-view></router-view>
+导航
+  <router-link to="/">Home</router-link>
+  <router-link to="/about">About</router-link>
+
+  this.$router.push('/')
+  this.$router.push('/about')
+
+需求分析
+  spa ⻚⾯不能刷新
+    hash #/about
+    History api /about
+  根据url显示对应的内容
+    router-view
+    数据响应式：current变量持有url地址，⼀旦变化，动态重新执⾏render
+任务
+  实现⼀个插件
+    实现VueRouter类
+      处理路由选项
+      监控url变化，hashchange
+      响应这个变化
+    实现install⽅法
+      $router注册
+      两个全局组件
