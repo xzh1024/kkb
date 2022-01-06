@@ -3,10 +3,24 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <button @click="$store.commit('add', 2)">
+        {{ $store.state.counter }}
+      </button>
+      <button @click="$store.dispatch('add', 10)">
+        async:{{ $store.state.counter }}
+      </button>
     </div>
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+    console.log(this.$store);
+    this.$store.state = 1;
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
