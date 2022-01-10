@@ -68,7 +68,17 @@ export default {
         if (isValid) {
           console.log('submit login');
         } else {
-          alert('校验失败!');
+          // alert('校验失败!');
+          // this.$create(Notice, {
+          //   title: '提示',
+          //   message: '校验失败',
+          //   duratin: 2000,
+          // });
+          this.$notice({
+            title: '提示',
+            message: '校验失败',
+            duratin: 2000,
+          });
         }
       });
     },

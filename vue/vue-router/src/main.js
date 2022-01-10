@@ -11,6 +11,14 @@ import './plugins/element.js';
 
 Vue.config.productionTip = false;
 
+import create from './utils/create';
+import Notice from './components/message/Notice.vue';
+Vue.prototype.$notice = function name(opts) {
+  const comp = create(Notice, opts);
+  comp.show();
+  return comp;
+};
+
 // 事件总线
 Vue.prototype.$bus = new Vue();
 
