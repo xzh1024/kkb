@@ -21,8 +21,12 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 import Child1 from './Child1.vue';
 import Child2 from './Child2.vue';
+
+const Event = new Vue();
 
 export default {
   provide() {
@@ -33,6 +37,7 @@ export default {
   data() {
     return {
       foo: 'foo from grandpa',
+      Event
     };
   },
   components: {

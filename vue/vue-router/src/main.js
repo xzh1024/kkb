@@ -1,8 +1,12 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+import '@/assets/css/main.scss';
+
 // import router from './krouter';
 import store from './store';
+
+import './plugins/element.js';
 // import store from './kstore';
 
 Vue.config.productionTip = false;

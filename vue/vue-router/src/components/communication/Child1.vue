@@ -13,5 +13,10 @@ export default {
       foo: '这是内容...',
     };
   },
+  mounted() {
+    this.$parent.Event.$on('event-from-child2', (msg) => {
+      console.log(msg);
+    });
+  },
 };
 </script>

@@ -26,7 +26,6 @@ class Store {
     this.commit = this.commit.bind(this);
     this.dispatch = this.dispatch.bind(this);
 
-
     // console.log(options.state);
     // console.log(this.state);
 
