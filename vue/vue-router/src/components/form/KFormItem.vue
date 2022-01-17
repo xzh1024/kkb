@@ -31,29 +31,23 @@ export default {
       // console.log('validate');
       // 加载一个校验库，async-validator
       // 1.获取规则和值
-      console.log(this.form);
       const rules = this.form.rules[this.prop];
       if (rules) {
         const value = this.form.model[this.prop];
-        console.log(value);
         // 2.获得校验器实例
         const validator = new Validator({ [this.prop]: rules });
         // 执行校验
         return validator.validate({ [this.prop]: value }, (errors) => {
-          console.log(errors);
           if (errors) {
-            console.log(errors[0].message);
             this.error = errors[0].message;
           } else {
             this.error = '';
           }
-          console.log(this.error);
         });
       }
     },
   },
   mounted() {
-    console.log(this.form);
     this.$on('input', (value) => {
       this.form.model[this.prop] = value;
     });
