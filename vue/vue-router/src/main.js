@@ -9,6 +9,8 @@ import store from './store';
 import './plugins/element.js';
 // import store from './kstore';
 
+import '@/icon';
+
 Vue.config.productionTip = false;
 
 import create from './utils/create';
