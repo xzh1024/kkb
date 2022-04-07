@@ -15,7 +15,7 @@ Vue.config.productionTip = false;
 
 import create from './utils/create';
 import Notice from './components/message/Notice.vue';
-Vue.prototype.$notice = function name(opts) {
+Vue.prototype.$notice = function (opts) {
   const comp = create(Notice, opts);
   comp.show();
   return comp;
